@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> options;
     private Spinner spinnerOptions;
     private ArrayAdapter<String> adapter;
-    private Button fiboButton, factorialButton;
+    private Button fiboButton, factorialButton, paisesButton;
     private static int cantFibo = 0;
     private static int cantFacto = 0;
     private LocalDateTime fechaFibo, fechaFacto;
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         //Inflar componentes
         fiboButton = findViewById(R.id.fibo);
         factorialButton = findViewById(R.id.factorial);
+        paisesButton = findViewById(R.id.paisesBtn);
         //Inicializar el spinner
         initOptions();
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,options);
@@ -81,6 +82,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                     startActivity(intent);
                 }
+            }
+        });
+
+        //Listener Paises
+        paisesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Paises.class);
+                startActivity(intent);
             }
         });
 
