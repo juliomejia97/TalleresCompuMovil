@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.taller1">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Factorial"></activity>
+        <activity android:name=".infoPais"></activity>
+        <activity android:name=".Paises" />
+        <activity android:name=".Factorial" />
         <activity android:name=".FibonnaciActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
