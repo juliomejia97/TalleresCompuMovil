@@ -52,6 +52,6 @@ public class FibonnaciActivity extends AppCompatActivity {
         double A = (1 + Math.sqrt(5))/2;
         double B = (1 - Math.sqrt(5))/2;
         double fib = (Math.pow(A,n) - Math.pow(B,n))/ Math.sqrt(5);
-        return String.valueOf((int) Math.floor(fib));
+        return String.valueOf(Math.floor(fib));
     }
 }
