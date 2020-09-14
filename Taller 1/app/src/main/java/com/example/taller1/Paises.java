@@ -2,7 +2,10 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -26,6 +29,19 @@ public class Paises extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, paises);
         listaPaises = findViewById(R.id.listaPaises);
         listaPaises.setAdapter(adapter);
+
+        listaPaises.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Pais pais = (Pais) parent.getItemAtPosition(position);
+                Intent intent = new Intent(getBaseContext(), infoPais.class);
+                intent.putExtra("nombre", pais.getNombre());
+                intent.putExtra("nombreI", pais.getNombreI());
+                intent.putExtra("sigla", pais.getSigla());
+                intent.putExtra("capital", pais.getCapital());
+                startActivity(intent);
+            }
+        });
     }
 
     public String loadJSONFromAsset(){
