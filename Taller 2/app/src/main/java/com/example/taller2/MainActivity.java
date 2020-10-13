@@ -36,5 +36,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ActivityLocation.class);
+                startActivity(intent);
+            }
+        });
     }
 }
