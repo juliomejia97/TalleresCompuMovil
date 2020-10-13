@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -85,6 +86,10 @@ public class ActivityCamara extends AppCompatActivity {
                     Bundle extras = data.getExtras();
                     Bitmap imageBitmap = (Bitmap) extras.get("data");
                     imagen.setImageBitmap(imageBitmap);
+                    ViewGroup.LayoutParams layoutParams = imagen.getLayoutParams();
+                    layoutParams.width = 1000;
+                    layoutParams.height = 1000;
+                    imagen.setLayoutParams(layoutParams);
                 }
                 break;
         }
