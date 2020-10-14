@@ -42,8 +42,8 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".ActivityLocation"
-            android:label="@string/title_activity_location"></activity>
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
         <activity android:name=".ActivityCamara" />
         <activity android:name=".ActivityContacts" />
         <activity android:name=".MainActivity">
